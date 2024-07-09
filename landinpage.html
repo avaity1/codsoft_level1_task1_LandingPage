@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Landing Page</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger-menu .bar {
+            height: 3px;
+            width: 25px;
+            background: #fff;
+            margin: 4px 0;
+        }
+        
+        .home {
+            height: 100vh;
+            background: url('coffee1.jfif') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .home h1 {
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        .home .content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .home .content .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff8800;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .about {
+            background: #f9f9f9;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+        }
+        
+        .about-text h3 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        
+        .menu {
+            background: #fff;
+        }
+        
+        .menu-section {
+            margin-bottom: 40px;
+        }
+        
+        .menu-section h3 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #333;
+        }
+        
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .menu-item {
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item h4 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .menu-item p {
+            margin-bottom: 10px;
+        }
+        
+        .menu-item .price {
+            font-weight: bold;
+            color: #ff8800;
+        }
+        
+        .contact {
+            background: #f9f9f9;
+        }
+        
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+        
+            .nav-links li {
+                margin: 10px 0;
+            }
+        
+            .hamburger-menu {
+                display: flex;
+            }
+        
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .about-image, .about-text {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+        
+     </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Coffee Shop</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="home">
+        <div class="content">
+            <h1>Welcome to Our Coffee Shop</h1>
+            <p>Experience the best coffee in town</p>
+            <a href="#menu" class="btn">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Learn more about our story and mission.</p>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="coffee2.jfif" alt="About Us">
+            </div>
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>We started our journey in 2000 with a passion for coffee and a desire to create a warm and welcoming space for coffee lovers. Our mission is to provide high-quality coffee and excellent service to our customers.</p>
+                <h3>Our Mission</h3>
+                <p>Our mission is to bring the best coffee experience to our community. We source our beans from sustainable farms and roast them to perfection to bring out the best flavors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <p>Check out our delicious offerings.</p>
+
+        <div class="menu-section">
+            <h3>Coffee</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="espresso.jfif" alt="Espresso">
+                    <h4>Espresso</h4>
+                    <p>A rich and bold shot of coffee, perfect for a quick pick-me-up.</p>
+                    <p class="price">$3.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="cappuccino.jfif" alt="Cappuccino">
+                    <h4>Cappuccino</h4>
+                    <p>A perfect blend of espresso, steamed milk, and foam.</p>
+                    <p class="price">$4.50</p>
+                </div>
+                <div class="menu-item">
+                    <img src="latte.avif" alt="Latte">
+                    <h4>Latte</h4>
+                    <p>Smooth espresso with steamed milk and a touch of foam.</p>
+                    <p class="price">$4.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="mocha.jfif" alt="Mocha">
+                    <h4>Mocha</h4>
+                    <p>A delightful combination of espresso, chocolate, and steamed milk.</p>
+                    <p class="price">$4.75</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h3>Snacks</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="Blueberry Muffin.jfif" alt="Blueberry Muffin">
+                    <h4>Blueberry Muffin</h4>
+                    <p>A moist and delicious muffin loaded with fresh blueberries.</p>
+                    <p class="price">$2.50</p>
+                </div>
+                <div class="menu-item">
+                    <img src="Croissant.jfif" alt="Croissant">
+                    <h4>Croissant</h4>
+                    <p>A flaky, buttery croissant perfect for pairing with your coffee.</p>
+                    <p class="price">$2.75</p>
+                </div>
+                <div class="menu-item">
+                    <img src="Bagel with Cream Cheese.jfif" alt="Bagel with Cream Cheese">
+                    <h4>Bagel with Cream Cheese</h4>
+                    <p>A toasted bagel served with smooth cream cheese.</p>
+                    <p class="price">$3.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="Chocolate Chip Cookie.jfif" alt="Chocolate Chip Cookie">
+                    <h4>Chocolate Chip Cookie</h4>
+                    <p>A classic cookie filled with rich chocolate chips.</p>
+                    <p class="price">$1.50</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Coffee Shop. All rights reserved.</p>
+    </footer>
+
+    <!-- <script src="scripts.js"></script> -->
+</body>
+</html>
+
